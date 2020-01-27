@@ -73,7 +73,7 @@ module.exports = {
                 token: token
             })
             if (user1) {
-                user2 = await User.findById(req.params.id)
+                user2 = await User.findById({_id = req.params.id})
                 if (user1.token == user2.token) {
                     timeNow = Date.now()
                     if ((timeNow - user2.ultimo_login) > 1800000) {
