@@ -66,7 +66,7 @@ module.exports = {
     async searchUser(req, res) {
 
         token = req.headers.token
-        if (token.startsWith('Bearer ')) {
+        if (token&&token.startsWith('Bearer ')) {
             // Remove Bearer from string
             token = token.slice(7, token.length);
             user1 = await User.findOne({
