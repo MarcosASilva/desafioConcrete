@@ -95,6 +95,10 @@ module.exports = {
                     error: 'Não Autorizado'
                 })
             }
+        } else {
+            res.status(401).send({
+                error: 'Não Autorizado'
+            })
         }
 
     }
